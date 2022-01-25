@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import io.github.imurx.arboard.Clipboard;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.Arrays;
 
 
@@ -27,16 +28,14 @@ public class ScreenshotCopy {
     }
 
     public static void copyScreenshot(NativeImage image) {
-        ByteBuffer imageBytes = ByteBuffer.allocate(image.getWidth() * image.getHeight() * 4);
-        for(int x = 0; x < image.getWidth(); x++) {
-            for(int y = 0; y < image.getHeight(); y++) {
+        ByteBuffer imageBytes = ByteBuffer.allocate(image.getWidth() * image.getHeight() * 4).order(ByteOrder.LITTLE_ENDIAN);
+        for(int y = 0; y < image.getHeight(); y++) {
+            for(int x = 0; x < image.getWidth(); x++) {
                 imageBytes.putInt(image.getColor(x, y));
             }
         }
         try(ImageData data = new ImageData(image.getWidth(), image.getHeight(), imageBytes.array())) {
             clipboard.setImage(data);
-        } catch(Exception ex) {
-            LOGGER.error("Trying to create image data", ex);
         }
     }
 }

@@ -21,7 +21,7 @@ subprojects {
         // The following line declares the yarn mappings you may select this one as well.
         mappings "net.fabricmc:yarn:1.18+build.1:v2"
 
-        implementation "io.github.imurx:arboard:1.0.0"
+        implementation "io.github.imurx:arboard:1.0.1"
     }
 }
 
@@ -40,6 +40,8 @@ allprojects {
         // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
         // See https://docs.gradle.org/current/userguide/declaring_repositories.html
         // for more information about repositories.
+        maven { url "https://maven.shedaniel.me" }
+        maven { url "https://maven.terraformersmc.com" }
     }
 
     tasks.withType(JavaCompile) {

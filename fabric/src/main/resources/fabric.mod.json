@@ -11,17 +11,20 @@
     "homepage": "https://imurx.github.io",
     "sources": "https://github.com/imurx/screencopy"
   },
-  "license": "MIT",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT/Apache 2.0",
+  "icon": "assets/screencopy/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
       "io.github.imurx.screenshotcopy.fabric.ScreenshotCopyFabric"
+    ],
+    "modmenu": [
+      "io.github.imurx.screenshotcopy.fabric.ScreencopyMenuIntegration"
     ]
   },
   "mixins": ["screencopy.mixins.json"],
   "depends": {
-    "fabric": "*",
+    "fabricloader": ">=0.9.0",
     "minecraft": ">=1.18"
   },
   "suggests": {

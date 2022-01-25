@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[38,)"
-#issueTrackerURL = ""
-license = "MIT"
+issueTrackerURL = "https://github.com/ImUrX/screencopy/issues"
+license = "MIT/Apache 2.0"
 
 [[mods]]
 modId = "screencopy"
