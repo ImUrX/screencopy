@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "screencopy",
+  "version": "${version}",
+  "name": "Screencopy",
+  "description": "Copies screenshots to your clipboard",
+  "authors": [
+    "ImUrX"
+  ],
+  "contact": {
+    "homepage": "https://imurx.github.io",
+    "sources": "https://github.com/imurx/screencopy"
+  },
+  "license": "MIT",
+  "icon": "assets/examplemod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.imurx.screenshotcopy.fabric.ScreenshotCopyFabric"
+    ]
+  },
+  "mixins": ["screencopy.mixins.json"],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.18"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

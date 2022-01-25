@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[38,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "screencopy"
+version = "${version}"
+displayName = "Screencopy"
+authors = "ImUrX"
+description = '''
+Let's you save screenshots to your clipboard
+'''
+#logoFile = ""
+
+[[dependencies.screencopy]]
+modId = "forge"
+mandatory = true
+versionRange = "[38,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.screencopy]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18,)"
+ordering = "NONE"
+side = "BOTH"
