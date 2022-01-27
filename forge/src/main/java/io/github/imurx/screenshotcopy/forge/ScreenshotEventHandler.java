@@ -1,4 +1,5 @@
 package io.github.imurx.screenshotcopy.forge;
+
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
