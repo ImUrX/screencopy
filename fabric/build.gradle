@@ -25,6 +25,7 @@ dependencies {
     }
     modImplementation "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
 
+    include "io.github.imurx:arboard:${rootProject.arboard_version}"
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

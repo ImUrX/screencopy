@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[38,)"
 issueTrackerURL = "https://github.com/ImUrX/screencopy/issues"
-license = "MIT/Apache 2.0"
+license = "MIT OR Apache 2.0"
 
 [[mods]]
 modId = "screencopy"
@@ -26,3 +26,10 @@ mandatory = true
 versionRange = "[1.18,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.screencopy]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[1.18,)"
+ordering = "NONE"
+side = "CLIENT"

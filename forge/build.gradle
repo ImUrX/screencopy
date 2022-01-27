@@ -15,11 +15,20 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+loom {
+    forge {
+        mixinConfig "screencopy.mixins.json"
+    }
+}
+
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
     //modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
+    modApi "me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}"
 
+    forgeRuntimeLibrary "io.github.imurx:arboard:${rootProject.arboard_version}"
+    shadowCommon "io.github.imurx:arboard:${rootProject.arboard_version}"
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
@@ -34,7 +43,6 @@ processResources {
 
 shadowJar {
     exclude "fabric.mod.json"
-
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
 }
@@ -53,6 +61,7 @@ sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 components.java {
