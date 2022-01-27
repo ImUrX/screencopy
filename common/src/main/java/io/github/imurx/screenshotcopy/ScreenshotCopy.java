@@ -34,7 +34,12 @@ public class ScreenshotCopy {
                 imageBytes.putInt(image.getColor(x, y));
             }
         }
-        try(ImageData data = new ImageData(image.getWidth(), image.getHeight(), imageBytes.array())) {
+        copyScreenshot(image.getWidth(), image.getHeight(), imageBytes.array());
+    }
+
+    public static void copyScreenshot(int width, int height, byte[] array) {
+        LOGGER.info("{} {} {} {}", array[0], array[1], array[2], array[3]);
+        try(ImageData data = new ImageData(width, height, array)) {
             clipboard.setImage(data);
         }
     }

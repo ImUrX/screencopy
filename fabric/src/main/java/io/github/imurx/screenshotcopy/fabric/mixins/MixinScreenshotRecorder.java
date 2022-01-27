@@ -1,4 +1,4 @@
-package io.github.imurx.screenshotcopy.mixins;
+package io.github.imurx.screenshotcopy.fabric.mixins;
 
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;

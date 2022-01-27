@@ -26,6 +26,5 @@ public class ScreenshotCopyForge {
         ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class, () -> new ConfigGuiHandler.ConfigGuiFactory((client, parent) ->
                 AutoConfig.getConfigScreen(ScreencopyConfig.class, parent).get()
         ));
-
     }
 }
