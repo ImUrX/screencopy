@@ -22,11 +22,11 @@ public abstract class MixinScreenshotRecorder {
         try {
             ScreenshotCopy.copyScreenshot(image);
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) {
-                messageReceiver.accept(new TranslatableText("screencopy.success"));
+                messageReceiver.accept(new TranslatableText("text.screencopy.success"));
                 ci.cancel();
             }
         } catch(Exception ex) {
-            messageReceiver.accept(new TranslatableText("screencopy.failure", ex.toString()));
+            messageReceiver.accept(new TranslatableText("text.screencopy.failure", ex.toString()));
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) ci.cancel();
         }
     }

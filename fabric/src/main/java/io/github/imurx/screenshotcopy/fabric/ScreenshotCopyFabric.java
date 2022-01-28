@@ -10,9 +10,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
 public class ScreenshotCopyFabric implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -26,13 +23,13 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
 
     private void initFabrishot() {
         FramebufferCaptureCallback.EVENT.register((dimension, byteBuffer) -> {
-            ByteBuffer buffer = ByteBuffer.allocate(dimension.height * dimension.width * 4).order(ByteOrder.LITTLE_ENDIAN);
+            byte[] array = new byte[dimension.height * dimension.width * 4];
             //im sure there is a better way but no idea
-            for (int i = 0; i < byteBuffer.position(); i+=3) {
-                for(int j = 0; j < 3; j++) buffer.put(byteBuffer.get(j+i));
-                buffer.put((byte) 255);
+            for (int i = 0; i < byteBuffer.capacity(); i+=3) {
+                for(int j = 0; j < 3; j++) array[i+j] = byteBuffer.get(j+i);
+                array[i+3] = -1;
             }
-            ScreenshotCopy.copyScreenshot(dimension.width, dimension.height, buffer.array());
+            ScreenshotCopy.copyScreenshot(dimension.width, dimension.height, array);
         });
     }
 }

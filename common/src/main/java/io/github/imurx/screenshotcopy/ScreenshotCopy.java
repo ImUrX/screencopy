@@ -2,15 +2,12 @@ package io.github.imurx.screenshotcopy;
 
 import io.github.imurx.arboard.ImageData;
 import net.minecraft.client.texture.NativeImage;
-import org.lwjgl.stb.STBImage;
-import org.lwjgl.stb.STBImageWrite;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.github.imurx.arboard.Clipboard;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.Arrays;
 
 
 public class ScreenshotCopy {

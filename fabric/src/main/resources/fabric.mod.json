@@ -8,8 +8,10 @@
     "ImUrX"
   ],
   "contact": {
-    "homepage": "https://imurx.github.io",
-    "sources": "https://github.com/imurx/screencopy"
+    "homepage": "https://github.com/imurx/screencopy",
+    "sources": "https://github.com/imurx/screencopy",
+    "issues": "https://github.com/imurx/screencopy",
+    "email": "urielfontan2002@gmail.com"
   },
   "license": "MIT OR Apache-2.0",
   "icon": "assets/screencopy/icon.png",
@@ -27,7 +29,8 @@
     "fabricloader": ">=0.9.0",
     "minecraft": ">=1.18",
     "cloth-config": ">=6.1.48",
-    "fabric-lifecycle-events-v1": "*"
+    "fabric-lifecycle-events-v1": "*",
+    "fabric-resource-loader-v0": "*"
   },
   "breaks": {
     "screenshotClipboard": "*"

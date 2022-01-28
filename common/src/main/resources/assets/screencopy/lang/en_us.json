@@ -1,5 +1,5 @@
 {
-  "screencopy.success": "Screenshot saved to clipboard",
-  "screencopy.failure": "Couldn't save screenshot to clipboard: %s",
+  "text.screencopy.success": "Screenshot saved to clipboard",
+  "text.screencopy.failure": "Couldn't save screenshot to clipboard: %s",
   "text.autoconfig.screencopy.option.saveScreenshot": "Save screenshot file"
 }

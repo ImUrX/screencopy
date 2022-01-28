@@ -18,11 +18,11 @@ public class ScreenshotEventHandler {
         try {
             ScreenshotCopy.copyScreenshot(ev.getImage());
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) {
-                ev.setResultMessage(new TranslatableText("screencopy.success"));
+                ev.setResultMessage(new TranslatableText("text.screencopy.success"));
                 ev.setCanceled(true);
             }
         } catch(Exception ex) {
-            ev.setResultMessage(new TranslatableText("screencopy.failure", ex.toString()));
+            ev.setResultMessage(new TranslatableText("text.screencopy.failure", ex.toString()));
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) ev.setCanceled(true);
         }
     }
