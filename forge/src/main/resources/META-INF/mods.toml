@@ -7,11 +7,13 @@ license = "MIT OR Apache-2.0"
 modId = "screencopy"
 version = "${version}"
 displayName = "Screencopy"
+displayURL = "https://github.com/ImUrX/screencopy"
+credits = "Thanks KiboTheCookie for the icon design."
 authors = "ImUrX"
 description = '''
 Let's you save screenshots to your clipboard
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.screencopy]]
 modId = "forge"

@@ -7,14 +7,17 @@
   "authors": [
     "ImUrX"
   ],
+  "contributors": [
+    "KiboTheCookie"
+  ],
   "contact": {
     "homepage": "https://github.com/imurx/screencopy",
     "sources": "https://github.com/imurx/screencopy",
-    "issues": "https://github.com/imurx/screencopy",
+    "issues": "https://github.com/imurx/screencopy/issues",
     "email": "urielfontan2002@gmail.com"
   },
   "license": "MIT OR Apache-2.0",
-  "icon": "assets/screencopy/icon.png",
+  "icon": "icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
