@@ -25,9 +25,13 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
         FramebufferCaptureCallback.EVENT.register((dimension, byteBuffer) -> {
             byte[] array = new byte[dimension.height * dimension.width * 4];
             //im sure there is a better way but no idea
-            for (int i = 0; i < byteBuffer.capacity(); i+=3) {
-                for(int j = 0; j < 3; j++) array[i+j] = byteBuffer.get(j+i);
-                array[i+3] = -1;
+            int offset = 0;
+            for (int i = 0; i < byteBuffer.capacity(); i++) {
+                if(i % 3 == 0 && i != 0) {
+                    array[i+offset] = -1;
+                    offset++;
+                }
+                array[offset+i] = byteBuffer.get(i);
             }
             ScreenshotCopy.copyScreenshot(dimension.width, dimension.height, array);
         });

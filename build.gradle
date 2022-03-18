@@ -1,6 +1,6 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "0.10.0-SNAPSHOT" apply false
+    id "dev.architectury.loom" version "0.11.0-SNAPSHOT" apply false
 }
 
 architectury {
@@ -19,7 +19,7 @@ subprojects {
         // The following line declares the mojmap mappings, you may use other mappings as well
         // mappings loom.officialMojangMappings()
         // The following line declares the yarn mappings you may select this one as well.
-        mappings "net.fabricmc:yarn:1.18+build.1:v2"
+        mappings "net.fabricmc:yarn:1.17.1+build.65:v2"
 
         implementation "io.github.imurx:arboard:${rootProject.arboard_version}"
     }
@@ -54,12 +54,10 @@ allprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release = 16
     }
 
     java {
         withSourcesJar()
     }
 }
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17

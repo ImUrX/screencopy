@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[38,)"
+loaderVersion = "[37,)"
 issueTrackerURL = "https://github.com/ImUrX/screencopy/issues"
 license = "MIT OR Apache-2.0"
 
@@ -18,20 +18,20 @@ logoFile = "icon.png"
 [[dependencies.screencopy]]
 modId = "forge"
 mandatory = true
-versionRange = "[38,)"
+versionRange = "[37,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18,)"
+versionRange = "[1.17,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "cloth_config"
 mandatory = true
-versionRange = "[6.1.48,)"
+versionRange = "[5.3.58,)"
 ordering = "NONE"
 side = "CLIENT"
