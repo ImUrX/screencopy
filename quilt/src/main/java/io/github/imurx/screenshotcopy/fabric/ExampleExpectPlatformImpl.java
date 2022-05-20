@@ -1,6 +1,5 @@
-package net.examplemod.fabric;
+package io.github.imurx.screenshotcopy.fabric;
 
-import net.examplemod.ExampleExpectPlatform;
 import org.quiltmc.loader.api.QuiltLoader;
 
 import java.nio.file.Path;

@@ -29,9 +29,8 @@
   },
   "mixins": ["screencopy.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.9.0",
-    "minecraft": ">=1.18",
-    "cloth-config": ">=6.1.48",
+    "minecraft": ">=1.18.2",
+    "cloth-config": ">=6.2.62",
     "fabric-lifecycle-events-v1": "*",
     "fabric-resource-loader-v0": "*"
   },

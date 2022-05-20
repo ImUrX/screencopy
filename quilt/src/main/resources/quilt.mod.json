@@ -34,7 +34,7 @@
       },
       {
         "id": "architectury",
-        "version": ">=4.2.50"
+        "version": ">=4.4.59"
       }
     ]
   }
