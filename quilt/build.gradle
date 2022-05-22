@@ -2,9 +2,13 @@ plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
+repositories {
+    maven { url "https://maven.quiltmc.org/repository/release/" }
+}
+
 architectury {
     platformSetupLoomIde()
-    forge()
+    loader("quilt")
 }
 
 configurations {
@@ -12,31 +16,36 @@ configurations {
     shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
-    developmentForge.extendsFrom common
+    developmentQuilt.extendsFrom common
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
-    //modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
-    modApi "me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}"
+    modImplementation "org.quiltmc:quilt-loader:${rootProject.quilt_loader_version}"
+    modApi "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${rootProject.quilt_fabric_api_version}"
+    // Remove the next few lines if you don't want to depend on the API
+    /*modApi("dev.architectury:architectury-fabric:${rootProject.architectury_version}") {
+        // We must not pull Fabric Loader from Architectury Fabric
+        exclude group: "net.fabricmc"
+        exclude group: "net.fabricmc.fabric-api"
+    }*/
 
-    forgeRuntimeLibrary "io.github.imurx:arboard:${rootProject.arboard_version}"
-    shadowCommon "io.github.imurx:arboard:${rootProject.arboard_version}"
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionQuilt")) { transitive false }
+    common(project(path: ":fabric-like", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":fabric-like", configuration: "transformProductionQuilt")) { transitive false }
 }
 
 processResources {
+    inputs.property "group", rootProject.maven_group
     inputs.property "version", project.version
 
-    filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
+    filesMatching("quilt.mod.json") {
+        expand "group": rootProject.maven_group,
+                "version": project.version
     }
 }
 
 shadowJar {
-    exclude "fabric.mod.json"
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
@@ -44,6 +53,7 @@ shadowJar {
 }
 
 remapJar {
+    injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
     classifier null
@@ -67,7 +77,7 @@ components.java {
 
 publishing {
     publications {
-        mavenForge(MavenPublication) {
+        mavenQuilt(MavenPublication) {
             artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }

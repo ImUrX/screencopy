@@ -15,7 +15,7 @@ import net.minecraftforge.network.NetworkConstants;
 @Mod(ScreenshotCopy.MOD_ID)
 public class ScreenshotCopyForge {
     public ScreenshotCopyForge() {
-        ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
+        ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> "Client-side mod", (a, b) -> b));
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> this::client);
     }
 
