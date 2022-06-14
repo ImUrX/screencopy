@@ -3,7 +3,7 @@ package io.github.imurx.screenshotcopy.forge;
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ScreenshotEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -18,11 +18,11 @@ public class ScreenshotEventHandler {
         try {
             ScreenshotCopy.copyScreenshot(ev.getImage());
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) {
-                ev.setResultMessage(new TranslatableText("text.screencopy.success"));
+                ev.setResultMessage(Text.translatable("text.screencopy.success"));
                 ev.setCanceled(true);
             }
         } catch(Exception ex) {
-            ev.setResultMessage(new TranslatableText("text.screencopy.failure", ex.toString()));
+            ev.setResultMessage(Text.translatable("text.screencopy.failure", ex.toString()));
             if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) ev.setCanceled(true);
         }
     }

@@ -9,6 +9,8 @@ import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.text.Text;
 
 public class ScreenshotCopyFabric implements ClientModInitializer {
     @Override
@@ -33,7 +35,13 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
                 }
                 array[offset+i] = byteBuffer.get(i);
             }
-            ScreenshotCopy.copyScreenshot(dimension.width(), dimension.height(), array);
+            try {
+                ScreenshotCopy.copyScreenshot(dimension.width(), dimension.height(), array);
+                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
+            } catch(Exception ex) {
+                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.failure", ex.toString()));
+            }
+
         });
     }
 }
