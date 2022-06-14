@@ -15,7 +15,10 @@ public class ScreenshotCopy {
     private static final Logger LOGGER = LoggerFactory.getLogger("Screencopy");
     private static Clipboard clipboard;
     public static void init() {
-        if(clipboard != null) LOGGER.warn("Someone tried to init me again", new IllegalStateException("Clipboard is already defined, can't init it again"));
+        if(clipboard != null) {
+            LOGGER.warn("Someone tried to init me again", new IllegalStateException("Clipboard is already defined, can't init it again"));
+            return;
+        }
         clipboard = new Clipboard();
     }
 
