@@ -38,7 +38,6 @@ public class ScreenshotCopy {
     }
 
     public static void copyScreenshot(int width, int height, byte[] array) {
-        LOGGER.info("{} {} {} {}", array[0], array[1], array[2], array[3]);
         try(ImageData data = new ImageData(width, height, array)) {
             clipboard.setImage(data);
         }
