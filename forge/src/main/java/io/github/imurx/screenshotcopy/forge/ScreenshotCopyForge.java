@@ -5,12 +5,11 @@ import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.ConfigGuiHandler;
+import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.NetworkConstants;
 
 @Mod(ScreenshotCopy.MOD_ID)
 public class ScreenshotCopyForge {
@@ -23,7 +22,7 @@ public class ScreenshotCopyForge {
         AutoConfig.register(ScreencopyConfig.class, Toml4jConfigSerializer::new);
         ScreenshotCopy.init();
 
-        ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class, () -> new ConfigGuiHandler.ConfigGuiFactory((client, parent) ->
+        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) ->
                 AutoConfig.getConfigScreen(ScreencopyConfig.class, parent).get()
         ));
     }
