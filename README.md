@@ -2,7 +2,7 @@
 
 This is a client-side mod that lets you copy screenshots to your clipboard, you just need to press F2 like you usually do in Minecraft. It works in macOS, Linux and Windows that use x64 or arm64. Also there is a config file for not saving the file to the screenshots folder if that's your preference!
 
-This mod shouldn't be incompatible with any mod (including optifine) but do report it in the issues section ;)
+This mod shouldn't be incompatible with any mod (including optifine) but do report it in the [issues section](https://github.com/ImUrX/screencopy/issues) ;)
 
 [Discord Server](https://discord.gg/7EnaAuaAwF)
 
