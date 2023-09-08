@@ -67,7 +67,7 @@ TODO
 This assumes you have [Fabric](https://fabricmc.net/) installed.
 
  - Locate the `mods` folder for your Fabric installation.
- - Copy the file from `screenshotcopy-1.2.2-fabric.jar` (adjust version number as appropriate) to the `mods` folder of your Fabric installation.
+ - Copy the file from `fabric/build/libs/screenshotcopy-1.2.2-fabric.jar` (adjust version number as appropriate) to the `mods` folder of your Fabric installation.
  - Launch your Fabric version of Minecraft
 
 For a video on installing Frabric, see https://www.youtube.com/watch?v=lP_Z0E6oGo8
