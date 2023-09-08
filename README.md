@@ -6,6 +6,8 @@ This mod shouldn't be incompatible with any mod (including optifine) but do repo
 
 [Discord Server](https://discord.gg/7EnaAuaAwF)
 
+Tested as working with Minecraft 1.19.1.
+
 ## Building
 
 First make sure to have the latest Java SDK installed for your system:
@@ -13,16 +15,25 @@ First make sure to have the latest Java SDK installed for your system:
  - [Oracle Java](https://www.oracle.com/ca-en/java/technologies/downloads/)
  - [OpenJDK](https://openjdk.org/)
 
-You will then need to make sure you have
-[Gradle](https://spring.io/guides/gs/gradle/) installed, with the
-"[Install Gradle](https://spring.io/guides/gs/gradle#initial)"
-section being the one to focus on.
-
 Once you have the build environment setup, all you need to is
-run the following to get the build started:
+run the appropriate script, according to your platform, to get
+the build running (current build uses Gradle 7). See the sub-sections,
+for the most common platforms.
+
+Note, generated assets will be in `fabric/build/libs` and
+`forge/build/libs`, for Fabric and Forge, respectively.
+
+### Linux & macOS
 
 ```sh
-gradle
+chmod +x ./gradlew
+./gradlew build
+```
+
+### Windows
+
+```sh
+gradlew.bat build
 ```
 
 ## Installation
@@ -33,11 +44,19 @@ otherwise if you are building from source, follow the steps below.
 
 ### Forge
 
+This assumes you have [CurseForge](https://www.curseforge.com/) installed.
+
 TODO
 
 ### Fabric
 
-TODO
+This assumes you have [Fabric](https://fabricmc.net/) installed.
+
+ - Locate the `mods` folder for your Fabric installation.
+ - Copy the file from `screenshotcopy-1.2.2-fabric.jar` (adjust version number as appropriate) to the `mods` folder of your Fabric installation.
+ - Launch your Fabric version of Minecraft
+
+For a video on installing Frabric, see https://www.youtube.com/watch?v=lP_Z0E6oGo8
 
 ## License
 
