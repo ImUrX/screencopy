@@ -12,7 +12,7 @@ Tested as working with Minecraft 1.19.1, 1.20.1.
 
 
  - [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
- - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+ - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) (if using Fabric)
 
 Note: when downloading, be sure to pay attention to the target Minecraft
 release and mod platform (Fabric/Forge) where applicable.
