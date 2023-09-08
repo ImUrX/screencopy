@@ -6,7 +6,21 @@ This mod shouldn't be incompatible with any mod (including optifine) but do repo
 
 [Discord Server](https://discord.gg/7EnaAuaAwF)
 
-Tested as working with Minecraft 1.19.1.
+Tested as working with Minecraft 1.19.1, 1.20.1.
+
+## Dependencies
+
+### Forge
+
+TODO
+
+### Fabric
+
+ - [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
+ - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+
+Note: when downloading, be sure to pay attention to the target Minecraft
+release, where applicable.
 
 ## Building
 
