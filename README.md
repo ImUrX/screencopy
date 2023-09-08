@@ -10,17 +10,12 @@ Tested as working with Minecraft 1.19.1, 1.20.1.
 
 ## Dependencies
 
-### Forge
-
-TODO
-
-### Fabric
 
  - [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
  - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 
 Note: when downloading, be sure to pay attention to the target Minecraft
-release, where applicable.
+release and mod platform (Fabric/Forge) where applicable.
 
 ## Building
 
@@ -58,9 +53,11 @@ otherwise if you are building from source, follow the steps below.
 
 ### Forge
 
-This assumes you have [CurseForge](https://www.curseforge.com/) installed.
+This assumes you have [Minecraft Forge](https://files.minecraftforge.net/net/minecraftforge/forge/) installed.
 
-TODO
+ - Locate the `mods` folder for your Forge installation.
+ - Copy the file from `forge/build/libs/screenshotcopy-1.2.2-forge.jar` (adjust version number as appropriate) to the `mods` folder of your Forge installation.
+ - Launch your Forge version of Minecraft
 
 ### Fabric
 
