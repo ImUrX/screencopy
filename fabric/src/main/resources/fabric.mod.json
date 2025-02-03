@@ -14,7 +14,7 @@
     "homepage": "https://github.com/imurx/screencopy",
     "sources": "https://github.com/imurx/screencopy",
     "issues": "https://github.com/imurx/screencopy/issues",
-    "email": "urielfontan2002@gmail.com"
+    "email": "imurx@proton.me"
   },
   "license": "MIT OR Apache-2.0",
   "icon": "icon.png",
@@ -27,10 +27,10 @@
       "io.github.imurx.screenshotcopy.fabric.ScreencopyMenuIntegration"
     ]
   },
-  "mixins": ["screencopy.mixins.json"],
+  "mixins": ["screencopy.common.mixins.json","screencopy.mixins.json"],
   "depends": {
-    "minecraft": ">=1.19.1",
-    "cloth-config": ">=8.0.75",
+    "minecraft": ">=1.21.2",
+    "cloth-config": ">=16.0.141",
     "fabric-lifecycle-events-v1": "*",
     "fabric-resource-loader-v0": "*"
   },

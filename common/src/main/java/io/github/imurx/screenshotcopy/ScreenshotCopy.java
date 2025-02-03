@@ -1,6 +1,7 @@
 package io.github.imurx.screenshotcopy;
 
 import io.github.imurx.arboard.ImageData;
+import io.github.imurx.screenshotcopy.mixins.NativeImageInvoker;
 import net.minecraft.client.texture.NativeImage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,10 +29,11 @@ public class ScreenshotCopy {
     }
 
     public static void copyScreenshot(NativeImage image) {
+        NativeImageInvoker invoker = ((NativeImageInvoker) (Object) image);
         ByteBuffer imageBytes = ByteBuffer.allocate(image.getWidth() * image.getHeight() * 4).order(ByteOrder.LITTLE_ENDIAN);
         for(int y = 0; y < image.getHeight(); y++) {
             for(int x = 0; x < image.getWidth(); x++) {
-                imageBytes.putInt(image.getColor(x, y));
+                imageBytes.putInt(invoker.invokeGetColor(x, y));
             }
         }
         copyScreenshot(image.getWidth(), image.getHeight(), imageBytes.array());

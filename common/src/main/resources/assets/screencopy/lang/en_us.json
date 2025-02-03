@@ -1,5 +1,7 @@
 {
   "text.screencopy.success": "Screenshot saved to clipboard",
   "text.screencopy.failure": "Couldn't save screenshot to clipboard: %s",
-  "text.autoconfig.screencopy.option.saveScreenshot": "Save screenshot file"
+  "text.autoconfig.screencopy.option.saveScreenshot": "Save screenshot file",
+  "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "Save screenshots to file aside from copying to clipboard",
+  "fml.menu.mods.info.description.screencopy": "Let's you save screenshots to your clipboard"
 }

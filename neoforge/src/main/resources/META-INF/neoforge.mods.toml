@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[42,)"
+loaderVersion = "[4,)"
 issueTrackerURL = "https://github.com/ImUrX/screencopy/issues"
 license = "MIT OR Apache-2.0"
 
@@ -10,28 +10,29 @@ displayName = "Screencopy"
 displayURL = "https://github.com/ImUrX/screencopy"
 credits = "Thanks KiboTheCookie for the icon design."
 authors = "ImUrX"
-description = '''
-Let's you save screenshots to your clipboard
-'''
 logoFile = "icon.png"
+updateJSONURL = "https://api.modrinth.com/updates/screencopy/forge_updates.json?neoforge=only"
 
 [[dependencies.screencopy]]
-modId = "forge"
-mandatory = true
-versionRange = "[42,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[21.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.19.1,)"
+type = "required"
+versionRange = "[1.21.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "cloth_config"
 mandatory = true
-versionRange = "[8.0.75,)"
+versionRange = "[16.0.141,)"
 ordering = "NONE"
 side = "CLIENT"
+
+[[mixins]]
+config = "screencopy.common.mixins.json"

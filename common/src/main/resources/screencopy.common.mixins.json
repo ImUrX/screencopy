@@ -1,10 +1,12 @@
 {
   "required": true,
-  "package": "io.github.imurx.screenshotcopy.fabric.mixins",
+  "package": "io.github.imurx.screenshotcopy.mixins",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
-    "MixinScreenshotRecorder"
+    "NativeImageInvoker"
+  ],
+  "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1
