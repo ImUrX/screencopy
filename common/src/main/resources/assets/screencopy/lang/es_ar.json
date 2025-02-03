@@ -1,0 +1,8 @@
+{
+  "text.screencopy.success": "La captura de pantalla fue guardada en el portapapeles",
+  "text.screencopy.failure": "No se pudo guardar la captura de pantalla en el portapapeles: %s",
+  "text.autoconfig.screencopy.title": "Screencopy",
+  "text.autoconfig.screencopy.option.saveScreenshot": "Guardar archivos de las capturas",
+  "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "Guardar como archivos las capturas de pantalla además de ponerlas en el portapapeles",
+  "fml.menu.mods.info.description.screencopy": "¡Te permite guardar capturas de pantalla en el portapapeles!"
+}
