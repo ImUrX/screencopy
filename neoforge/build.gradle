@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow'
+    id 'com.gradleup.shadow'
 }
 
 architectury {
@@ -38,8 +38,8 @@ dependencies {
 
     forgeRuntimeLibrary "io.github.imurx:arboard:${rootProject.arboard_version}"
     shadowBundle "io.github.imurx:arboard:${rootProject.arboard_version}"
-//    include "com.github.ramanrajarathinam:native-utils:1.0.0"
-//    include "io.github.imurx:arboard:${rootProject.arboard_version}"
+    include "com.github.ramanrajarathinam:native-utils:1.0.0"
+    include "io.github.imurx:arboard:${rootProject.arboard_version}"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
