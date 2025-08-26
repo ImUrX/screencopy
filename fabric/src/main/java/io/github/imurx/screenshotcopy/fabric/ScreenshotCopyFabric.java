@@ -24,19 +24,9 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
     }
 
     private void initFabrishot() {
-        FramebufferCaptureCallback.EVENT.register((dimension, byteBuffer) -> {
-            byte[] array = new byte[dimension.height() * dimension.width() * 4];
-            //im sure there is a better way but no idea
-            int offset = 0;
-            for (int i = 0; i < byteBuffer.capacity(); i++) {
-                if(i % 3 == 0 && i != 0) {
-                    array[i+offset] = -1;
-                    offset++;
-                }
-                array[offset+i] = byteBuffer.get(i);
-            }
+        FramebufferCaptureCallback.EVENT.register((image) -> {
             try {
-                ScreenshotCopy.copyScreenshot(dimension.width(), dimension.height(), array);
+                ScreenshotCopy.copyScreenshot(image);
                 MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
             } catch(Exception ex) {
                 MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.failure", ex.toString()));
