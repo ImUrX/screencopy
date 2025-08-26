@@ -4,5 +4,9 @@
   "text.autoconfig.screencopy.title": "Screencopy",
   "text.autoconfig.screencopy.option.saveScreenshot": "Guardar archivos de las capturas",
   "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "Guardar como archivos las capturas de pantalla además de ponerlas en el portapapeles",
+  "text.autoconfig.screencopy.option.copyScreenshot": "Mod habilitado",
+  "text.autoconfig.screencopy.option.copyScreenshot.@Tooltip": "Copia capturas al portapapeles",
+  "text.autoconfig.screencopy.option.messageOnCopy": "Mandar mensaje al copiar",
+  "text.autoconfig.screencopy.option.messageOnCopy.@Tooltip": "Manda un mensaje cada vez que una captura es copiada al portapapeles, config ignorada en casos obvios",
   "fml.menu.mods.info.description.screencopy": "¡Te permite guardar capturas de pantalla en el portapapeles!"
 }

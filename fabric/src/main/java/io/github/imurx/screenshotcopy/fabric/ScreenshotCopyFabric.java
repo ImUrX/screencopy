@@ -18,16 +18,25 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
         AutoConfig.register(ScreencopyConfig.class, Toml4jConfigSerializer::new);
         ScreenshotCopy.init();
 
-        if(FabricLoader.getInstance().isModLoaded("fabrishot")) initFabrishot();
+        try {
+            if(FabricLoader.getInstance().isModLoaded("fabrishot")) initFabrishot();
+        } catch(Exception e) {
+            ScreenshotCopy.LOGGER.error("Failed to init Fabrishot compatibility", e);
+        }
 
         ClientLifecycleEvents.CLIENT_STOPPING.register((_client) -> ScreenshotCopy.stop());
     }
 
     private void initFabrishot() {
         FramebufferCaptureCallback.EVENT.register((image) -> {
+            var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
+            if(!config.copyScreenshot) return;
+
             try {
                 ScreenshotCopy.copyScreenshot(image);
-                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
+                if(config.messageOnCopy) {
+                    MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
+                }
             } catch(Exception ex) {
                 MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.failure", ex.toString()));
             }

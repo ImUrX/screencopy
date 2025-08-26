@@ -3,6 +3,7 @@ package io.github.imurx.screenshotcopy.neoforge;
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
@@ -14,16 +15,20 @@ import net.neoforged.neoforge.client.event.ScreenshotEvent;
 public class ScreenshotEventHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onScreenshot(ScreenshotEvent ev) {
-        if(ev.getScreenshotFile().exists()) return;
+        var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
+        if(ev.getScreenshotFile().exists() || !config.copyScreenshot) return;
+
         try {
             ScreenshotCopy.copyScreenshot(ev.getImage());
-            if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) {
+            if(!config.saveScreenshot) {
                 ev.setResultMessage(Text.translatable("text.screencopy.success"));
-                ev.setCanceled(true);
+            } else if(config.messageOnCopy) {
+                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
             }
         } catch(Exception ex) {
             ev.setResultMessage(Text.translatable("text.screencopy.failure", ex.toString()));
-            if(!AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig().saveScreenshot) ev.setCanceled(true);
+        } finally {
+            if(!config.saveScreenshot) ev.setCanceled(true);
         }
     }
 }

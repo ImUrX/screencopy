@@ -4,5 +4,9 @@
   "text.autoconfig.screencopy.title": "Screencopy",
   "text.autoconfig.screencopy.option.saveScreenshot": "Save screenshot file",
   "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "Save screenshots to file aside from copying to clipboard",
+  "text.autoconfig.screencopy.option.copyScreenshot": "Mod enabled",
+  "text.autoconfig.screencopy.option.copyScreenshot.@Tooltip": "Copies screenshots to the clipboard",
+  "text.autoconfig.screencopy.option.messageOnCopy": "Send message on copy",
+  "text.autoconfig.screencopy.option.messageOnCopy.@Tooltip": "Sends a message everytime the screenshot is sent to clipboard, config ignored in some obvious cases",
   "fml.menu.mods.info.description.screencopy": "Let's you save screenshots to your clipboard"
 }

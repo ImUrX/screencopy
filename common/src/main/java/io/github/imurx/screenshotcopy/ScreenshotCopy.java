@@ -13,7 +13,7 @@ import java.nio.ByteOrder;
 
 public class ScreenshotCopy {
     public static final String MOD_ID = "screencopy";
-    private static final Logger LOGGER = LoggerFactory.getLogger("Screencopy");
+    public static final Logger LOGGER = LoggerFactory.getLogger("Screencopy");
     private static Clipboard clipboard;
     public static void init() {
         if(clipboard != null) {
