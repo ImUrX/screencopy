@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "screencopy",
-  "version": "${version}",
+  "version": "${version}-fabric",
   "name": "Screencopy",
   "description": "Copies screenshots to your clipboard",
   "authors": [

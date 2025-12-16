@@ -5,7 +5,7 @@ license = "MIT OR Apache-2.0"
 
 [[mods]]
 modId = "screencopy"
-version = "${version}"
+version = "${version}-forge"
 displayName = "Screencopy"
 displayURL = "https://github.com/ImUrX/screencopy"
 credits = "Thanks KiboTheCookie for the icon design."
