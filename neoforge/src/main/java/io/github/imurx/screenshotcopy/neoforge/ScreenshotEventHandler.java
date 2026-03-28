@@ -3,8 +3,8 @@ package io.github.imurx.screenshotcopy.neoforge;
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,12 +21,12 @@ public class ScreenshotEventHandler {
         try {
             ScreenshotCopy.copyScreenshot(ev.getImage());
             if(!config.saveScreenshot) {
-                ev.setResultMessage(Text.translatable("text.screencopy.success"));
+                ev.setResultMessage(Component.translatable("text.screencopy.success"));
             } else if(config.messageOnCopy) {
-                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
+                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
             }
         } catch(Exception ex) {
-            ev.setResultMessage(Text.translatable("text.screencopy.failure", ex.toString()));
+            ev.setResultMessage(Component.translatable("text.screencopy.failure", ex.toString()));
         } finally {
             if(!config.saveScreenshot) ev.setCanceled(true);
         }

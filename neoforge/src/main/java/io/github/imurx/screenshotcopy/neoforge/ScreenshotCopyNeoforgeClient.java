@@ -3,6 +3,7 @@ package io.github.imurx.screenshotcopy.neoforge;
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.AutoConfigClient;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModLoadingContext;
@@ -16,7 +17,7 @@ public final class ScreenshotCopyNeoforgeClient {
         ScreenshotCopy.init();
 
         ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class, () -> (client, parent) ->
-                AutoConfig.getConfigScreen(ScreencopyConfig.class, parent).get()
+                AutoConfigClient.getConfigScreen(ScreencopyConfig.class, parent).get()
         );
     }
 }

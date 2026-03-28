@@ -1,6 +1,7 @@
 package io.github.imurx.screenshotcopy.fabric;
 
 
+import com.mojang.blaze3d.platform.NativeImage;
 import io.github.imurx.screenshotcopy.ScreencopyConfig;
 import io.github.imurx.screenshotcopy.ScreenshotCopy;
 import me.ramidzkh.fabrishot.event.FramebufferCaptureCallback;
@@ -9,8 +10,8 @@ import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 
 public class ScreenshotCopyFabric implements ClientModInitializer {
     @Override
@@ -28,19 +29,19 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
     }
 
     private void initFabrishot() {
-        FramebufferCaptureCallback.EVENT.register((image) -> {
-            var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
-            if(!config.copyScreenshot) return;
-
-            try {
-                ScreenshotCopy.copyScreenshot(image);
-                if(config.messageOnCopy) {
-                    MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.success"));
-                }
-            } catch(Exception ex) {
-                MinecraftClient.getInstance().inGameHud.getChatHud().addMessage(Text.translatable("text.screencopy.failure", ex.toString()));
-            }
-
-        });
+//        FramebufferCaptureCallback.EVENT.register((image) -> {
+//            var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
+//            if(!config.copyScreenshot) return;
+//
+//            try {
+//                ScreenshotCopy.copyScreenshot((NativeImage) (Object) image);
+//                if(config.messageOnCopy) {
+//                    Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
+//                }
+//            } catch(Exception ex) {
+//                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.failure", ex.toString()));
+//            }
+//
+//        });
     }
 }

@@ -1,8 +1,8 @@
 package io.github.imurx.screenshotcopy;
 
+import com.mojang.blaze3d.platform.NativeImage;
 import io.github.imurx.arboard.ImageData;
 import io.github.imurx.screenshotcopy.mixins.NativeImageInvoker;
-import net.minecraft.client.texture.NativeImage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.github.imurx.arboard.Clipboard;
