@@ -16,21 +16,21 @@ updateJSONURL = "https://api.modrinth.com/updates/screencopy/forge_updates.json?
 [[dependencies.screencopy]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.2,)"
+versionRange = "[26.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.2,)"
+versionRange = "[26.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.screencopy]]
 modId = "cloth_config"
 mandatory = true
-versionRange = "[16.0.141,)"
+versionRange = "[26.1.154,)"
 ordering = "NONE"
 side = "CLIENT"
 
