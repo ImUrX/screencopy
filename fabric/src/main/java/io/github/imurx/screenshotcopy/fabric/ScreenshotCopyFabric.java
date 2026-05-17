@@ -29,19 +29,19 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
     }
 
     private void initFabrishot() {
-//        FramebufferCaptureCallback.EVENT.register((image) -> {
-//            var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
-//            if(!config.copyScreenshot) return;
-//
-//            try {
-//                ScreenshotCopy.copyScreenshot((NativeImage) (Object) image);
-//                if(config.messageOnCopy) {
-//                    Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
-//                }
-//            } catch(Exception ex) {
-//                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.failure", ex.toString()));
-//            }
-//
-//        });
+        FramebufferCaptureCallback.EVENT.register((image) -> {
+            var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
+            if(!config.copyScreenshot) return;
+
+            try {
+                ScreenshotCopy.copyScreenshot(image);
+                if(config.messageOnCopy) {
+                    Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
+                }
+            } catch(Exception ex) {
+                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.failure", ex.toString()));
+            }
+
+        });
     }
 }
