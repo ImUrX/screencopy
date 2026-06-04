@@ -1,0 +1,13 @@
+{
+  "text.screencopy.success": "Скриншот скопирован в буфер обмена",
+  "text.screencopy.failure": "Не удалось скопировать скриншот в буфер обмена: %s",
+  "text.autoconfig.screencopy.title": "Screencopy",
+  "text.autoconfig.screencopy.option.saveScreenshot": "Скопировать файл скриншота",
+  "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "Сохранять скриншоты в файл, помимо копирования в буфер обмена",
+  "text.autoconfig.screencopy.option.copyScreenshot": "Включено",
+  "text.autoconfig.screencopy.option.copyScreenshot.@Tooltip": "Копировать скриншоты в буфер обмена",
+  "text.autoconfig.screencopy.option.messageOnCopy": "Отправлять сообщение в чат",
+  "text.autoconfig.screencopy.option.messageOnCopy.@Tooltip": "Отправлять сообщение каждый раз, когда снимок экрана копируется в буфер обмена; настройки игнорируются в некоторых случаях",
+  "fml.menu.mods.info.description.screencopy": "Модификация, позволяющая копировать скриншоты в буфер обмена",
+  "modmenu.descriptionTranslation.screencopy": "Модификация, позволяющая копировать скриншоты в буфер обмена"
+}
