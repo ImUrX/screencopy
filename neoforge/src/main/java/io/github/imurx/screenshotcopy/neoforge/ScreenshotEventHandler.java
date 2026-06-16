@@ -23,7 +23,7 @@ public class ScreenshotEventHandler {
             if(!config.saveScreenshot) {
                 ev.setResultMessage(Component.translatable("text.screencopy.success"));
             } else if(config.messageOnCopy) {
-                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
+                Minecraft.getInstance().gui.hud.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
             }
         } catch(Exception ex) {
             ev.setResultMessage(Component.translatable("text.screencopy.failure", ex.toString()));

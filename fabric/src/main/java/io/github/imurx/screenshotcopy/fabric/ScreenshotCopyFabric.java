@@ -36,10 +36,10 @@ public class ScreenshotCopyFabric implements ClientModInitializer {
             try {
                 ScreenshotCopy.copyScreenshot(image);
                 if(config.messageOnCopy) {
-                    Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
+                    Minecraft.getInstance().gui.hud.getChat().addClientSystemMessage(Component.translatable("text.screencopy.success"));
                 }
             } catch(Exception ex) {
-                Minecraft.getInstance().gui.getChat().addClientSystemMessage(Component.translatable("text.screencopy.failure", ex.toString()));
+                Minecraft.getInstance().gui.hud.getChat().addClientSystemMessage(Component.translatable("text.screencopy.failure", ex.toString()));
             }
 
         });

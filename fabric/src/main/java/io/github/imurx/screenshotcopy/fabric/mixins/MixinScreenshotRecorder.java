@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 @Mixin(Screenshot.class)
 public abstract class MixinScreenshotRecorder {
-    @Inject(at = @At("HEAD"), method = "lambda$grab$1", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "lambda$grab$3", cancellable = true)
     private static void onInnerScreenshot(NativeImage image, File file, Consumer<Component> callback, CallbackInfo ci) {
         var config = AutoConfig.getConfigHolder(ScreencopyConfig.class).getConfig();
         if(!config.copyScreenshot) return;
