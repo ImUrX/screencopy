@@ -1,0 +1,13 @@
+{
+  "text.screencopy.success": "截图已复制到剪贴板",
+  "text.screencopy.failure": "无法把截图复制到剪贴板：%s",
+  "text.autoconfig.screencopy.title": "Screencopy",
+  "text.autoconfig.screencopy.option.saveScreenshot": "保存截图文件",
+  "text.autoconfig.screencopy.option.saveScreenshot.@Tooltip": "除复制到剪贴板外，同时把截图保存为文件",
+  "text.autoconfig.screencopy.option.copyScreenshot": "启用模组",
+  "text.autoconfig.screencopy.option.copyScreenshot.@Tooltip": "把截图复制到剪贴板",
+  "text.autoconfig.screencopy.option.messageOnCopy": "复制时发送消息",
+  "text.autoconfig.screencopy.option.messageOnCopy.@Tooltip": "每次把截图复制到剪贴板时发送消息，某些显而易见的情况下会忽略此配置",
+  "fml.menu.mods.info.description.screencopy": "帮你把截图直接复制到剪贴板",
+  "modmenu.descriptionTranslation.screencopy": "帮你把截图直接复制到剪贴板"
+}
